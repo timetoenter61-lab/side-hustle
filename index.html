@@ -1,11 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#153b35">
 <meta name="description" content="A customizable static page template that helps independent sellers turn social-media enquiries into confirmed orders and payment invoices.">
-<title>Side Hustle Pay | Custom payment-page templates</title>
+<title>KMC Payment Page | Custom payment-page templates</title>
+<link rel="canonical" href="https://kineticmeasure.shop/">
+<link rel="icon" type="image/png" href="logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KMC Payment Page">
+<meta property="og:description" content="Customizable payment-page templates for independent sellers.">
+<meta property="og:url" content="https://kineticmeasure.shop/">
+<meta property="og:image" content="https://kineticmeasure.shop/officeprint.jpg">
 
 <style>
   :root {
@@ -130,10 +137,16 @@
   .button:hover { background: #20584b; }
 
   .hero-note {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
     margin: 0 0 0 14px;
-    color: var(--muted);
-    font-size: 0.88rem;
+    padding: 8px 12px;
+    border-left: 3px solid var(--orange);
+    background: #fff6f0;
+    color: var(--forest);
+    font-size: 1rem;
+    font-weight: 800;
   }
 
   .payment-panel {
@@ -263,8 +276,8 @@
 
   .offer {
     display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
     gap: 26px;
     padding: 30px 32px;
     border-radius: 7px;
@@ -272,12 +285,16 @@
     color: #fff;
   }
 
-  .offer .eyebrow { margin-bottom: 9px; color: var(--mint); }
+  .offer .eyebrow { margin-bottom: 9px; color: #ffeb3b; font-size: 1rem; }
   .offer h2 { margin-bottom: 8px; }
   .offer p { max-width: 590px; margin: 0; color: #d5e3dc; }
+  .offer-aside { display: flex; flex-direction: column; align-items: stretch; justify-content: space-between; gap: 18px; }
   .offer-price { min-width: 170px; text-align: right; }
   .offer-price strong { display: block; font-size: 2rem; line-height: 1.1; }
   .offer-price span { display: block; margin-top: 4px; color: #d5e3dc; font-size: 0.81rem; }
+  .offer-product { display: grid; width: 100%; grid-template-columns: minmax(0, 1fr) minmax(120px, 220px); align-items: center; gap: 14px; }
+  .offer-image { display: block; width: 100%; height: auto; border-radius: 4px; }
+  .offer-product p { margin: 0; }
 
   footer {
     display: flex;
@@ -296,6 +313,12 @@
     .process { grid-template-columns: 1fr; gap: 18px; }
   }
 
+  @media (max-width: 680px) {
+    .offer { grid-template-columns: 1fr; }
+    .offer-price { min-width: 0; text-align: left; }
+    .offer-product { grid-template-columns: minmax(0, 1fr) minmax(100px, 150px); gap: 10px; }
+  }
+
   @media (max-width: 560px) {
     .topbar, main { padding-right: 18px; padding-left: 18px; }
     .topbar { padding-top: 14px; padding-bottom: 14px; }
@@ -309,8 +332,7 @@
     .steps li { display: grid; grid-template-columns: 36px 1fr; column-gap: 8px; }
     .steps span { grid-row: span 2; margin: 0; }
     .steps strong { margin-bottom: 2px; }
-    .offer { grid-template-columns: 1fr; padding: 25px 21px; }
-    .offer-price { text-align: left; }
+    .offer { padding: 25px 21px; }
     footer { flex-direction: column; gap: 5px; padding-right: 18px; padding-left: 18px; }
   }
 
@@ -322,9 +344,9 @@
 
 <body>
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Side Hustle Pay home">
-      <img src="logo.png" alt="">
-      <span>SIDE HUSTLE PAY</span>
+    <a class="brand" href="#top" aria-label="KMC Payment Page home">
+      <img src="logo.png" alt="" width="256" height="256">
+      <span>KMC PAYMENT PAGE : PLEASE USE PAGE TABS TO NAVIGATE BETWEEN SITE AND PAYMENT PAGE</span>
     </a>
     <a href="#offer">Build a page for your business</a>
   </header>
@@ -333,7 +355,7 @@
     <section class="hero" aria-labelledby="main-heading">
       <div>
         <p class="eyebrow">A customizable static page template</p>
-        <h1 id="main-heading">Sell where your customers already are.</h1>
+        <h1 id="main-heading">This is the KMC Payment Page : It may be purchased as a remote payment service.</h1>
         <p class="hero-copy">Keep your products on Facebook, WhatsApp, or your existing shop. When a customer is ready, send them to a simple page to request an order confirmation. You verify the details and send a Stripe invoice for payment.</p>
         <a class="button" href="#payment">See the order request</a>
         <p class="hero-note">One-off setup. No store platform required.</p>
@@ -341,7 +363,7 @@
 
       <section class="payment-panel" id="payment" aria-labelledby="payment-heading">
         <div class="panel-topline">
-          <strong>Side Hustle Pay</strong>
+          <strong>KMC Payment Page demonstration</strong>
           <span class="status">Order request demo</span>
         </div>
         <h2 id="payment-heading">Request order confirmation</h2>
@@ -386,12 +408,18 @@
         <h2 id="offer-heading">A simple page, tailored to your business.</h2>
         <p>Your branding, contact details, and optional links to the shops and social platforms you already use. The static site is handed over for you to own and manage. Domain renewal is paid annually to the registrar by the owner.</p>
       </div>
-      <div class="offer-price"><strong>A$350</strong><span>One-off setup, including domain registration</span></div>
+      <div class="offer-aside">
+        <div class="offer-price"><strong>A$350</strong><span>One-off setup, including domain registration</span></div>
+        <div class="offer-product">
+          <p class="eyebrow">Portable thermal printer and app: an extra $150.00 to set up your complete portable office system for on-site invoicing and face-to-face receipts.</p>
+          <img class="offer-image" src="officeprint.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="A small portable printer printing a receipt on a desk">
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <span>Side Hustle Pay</span>
+    <span>KMC Payment Page</span>
     <span>Card payments are handled by the seller's payment provider, not this page.</span>
   </footer>
 
