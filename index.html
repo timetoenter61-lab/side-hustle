@@ -137,10 +137,11 @@
   .button:hover { background: #20584b; }
 
   .hero-note {
-    display: inline-flex;
+    display: flex;
+    width: fit-content;
     align-items: center;
     min-height: 42px;
-    margin: 0 0 0 14px;
+    margin: 1.6em 0 0;
     padding: 8px 12px;
     border-left: 3px solid var(--orange);
     background: #fff6f0;
@@ -326,7 +327,7 @@
     .topbar a:last-child { font-size: 0.8rem; }
     .hero { padding-top: 28px; padding-bottom: 44px; }
     h1 { font-size: 3rem; }
-    .hero-note { display: block; margin: 11px 0 0; }
+    .hero-note { margin: 1.6em 0 0; }
     .payment-panel { padding: 21px 18px; }
     .steps { grid-template-columns: 1fr; gap: 15px; }
     .steps li { display: grid; grid-template-columns: 36px 1fr; column-gap: 8px; }
